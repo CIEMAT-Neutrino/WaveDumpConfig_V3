@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I../../../Qt/5.12.2/gcc_64/include -I../../../Qt/5.12.2/gcc_64/include/QtWidgets -I../../../Qt/5.12.2/gcc_64/include/QtGui -I../../../Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/libdrm -I. -I../../../Qt/5.12.2/gcc_64/mkspecs/linux-g++
+INCPATH       = -I. -I../../../Qt/5.12.2/gcc_64/include -I../../../Qt/5.12.2/gcc_64/include/QtWidgets -I../../../Qt/5.12.2/gcc_64/include/QtGui -I../../../Qt/5.12.2/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I../../../Qt/5.12.2/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/lab/Qt/5.12.2/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -235,7 +235,6 @@ DIST          = ../../../Qt/5.12.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.12.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -444,7 +443,6 @@ Makefile: WaveDumpConfigV3.pro ../../../Qt/5.12.2/gcc_64/mkspecs/linux-g++/qmake
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.12.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.12.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -641,7 +639,6 @@ Makefile: WaveDumpConfigV3.pro ../../../Qt/5.12.2/gcc_64/mkspecs/linux-g++/qmake
 ../../../Qt/5.12.2/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.12.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/5.12.2/gcc_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../../Qt/5.12.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.12.2/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/5.12.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -825,7 +822,7 @@ moc_helpwindow.cpp: helpwindow.h \
 		../../../Qt/5.12.2/gcc_64/include/QtGui/qtouchdevice.h \
 		moc_predefs.h \
 		../../../Qt/5.12.2/gcc_64/bin/moc
-	/home/lab/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/lab/Documentos/QtPrograms/WaveDumpConfig_V3/moc_predefs.h -I/home/lab/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/lab/Documentos/QtPrograms/WaveDumpConfig_V3 -I/home/lab/Qt/5.12.2/gcc_64/include -I/home/lab/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/lab/Qt/5.12.2/gcc_64/include/QtGui -I/home/lab/Qt/5.12.2/gcc_64/include/QtCore -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.1/Tools/mingw730_32/i686-w64-mingw32/include helpwindow.h -o moc_helpwindow.cpp
+	/home/lab/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/lab/Documentos/QtPrograms/WaveDumpConfig_V3/moc_predefs.h -I/home/lab/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/lab/Documentos/QtPrograms/WaveDumpConfig_V3 -I/home/lab/Qt/5.12.2/gcc_64/include -I/home/lab/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/lab/Qt/5.12.2/gcc_64/include/QtGui -I/home/lab/Qt/5.12.2/gcc_64/include/QtCore -I/usr/include/c++/4.8.5 -I/usr/include/c++/4.8.5/x86_64-redhat-linux -I/usr/include/c++/4.8.5/backward -I/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include -I/usr/local/include -I/usr/include helpwindow.h -o moc_helpwindow.cpp
 
 moc_mainwindow.cpp: mainwindow.h \
 		../../../Qt/5.12.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -960,7 +957,7 @@ moc_mainwindow.cpp: mainwindow.h \
 		../../../Qt/5.12.2/gcc_64/include/QtGui/qinputmethod.h \
 		moc_predefs.h \
 		../../../Qt/5.12.2/gcc_64/bin/moc
-	/home/lab/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/lab/Documentos/QtPrograms/WaveDumpConfig_V3/moc_predefs.h -I/home/lab/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/lab/Documentos/QtPrograms/WaveDumpConfig_V3 -I/home/lab/Qt/5.12.2/gcc_64/include -I/home/lab/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/lab/Qt/5.12.2/gcc_64/include/QtGui -I/home/lab/Qt/5.12.2/gcc_64/include/QtCore -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.1/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.1/Tools/mingw730_32/i686-w64-mingw32/include mainwindow.h -o moc_mainwindow.cpp
+	/home/lab/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/lab/Documentos/QtPrograms/WaveDumpConfig_V3/moc_predefs.h -I/home/lab/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/lab/Documentos/QtPrograms/WaveDumpConfig_V3 -I/home/lab/Qt/5.12.2/gcc_64/include -I/home/lab/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/lab/Qt/5.12.2/gcc_64/include/QtGui -I/home/lab/Qt/5.12.2/gcc_64/include/QtCore -I/usr/include/c++/4.8.5 -I/usr/include/c++/4.8.5/x86_64-redhat-linux -I/usr/include/c++/4.8.5/backward -I/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include -I/usr/local/include -I/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:

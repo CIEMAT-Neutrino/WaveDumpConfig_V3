@@ -4,12 +4,14 @@ GUI to run wavedump-3.10.0 software.
 
 ## Installation
 
-```
-git clone
+```bash
+git clone https://github.com/CIEMAT-Neutrino/WaveDumpConfig_V3.git
 cd WaveDumpConfig_V3
 make
 ```
 
 ## Usage
 
-```# WaveDumpConfig_V3
+```bash
+./WaveDumpConfig_V3
+```

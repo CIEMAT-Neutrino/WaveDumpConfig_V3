@@ -131,6 +131,7 @@ bool WDConfigClass::SaveGlobalToFile(QString filename)
     else {
            QTextStream stream(&file);
 
+            qDebug() <<"Hello World! Welcome to SCINT :)";
             qDebug() <<"Writing Values to File";
             stream << "[COMMON]\n";
             if (MyGlobalParameters.CommDevice == 0)

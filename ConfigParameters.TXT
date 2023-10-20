@@ -1,0 +1,2 @@
+PathWaveDumpConfig /etc/wavedump/WaveDumpConfig.txt
+

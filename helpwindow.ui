@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HelpWindow</class>
+ <widget class="QDialog" name="HelpWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>807</width>
+    <height>458</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Help</string>
+  </property>
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>741</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string># ----------------------------------------------------------------
+# Settings common to all channels
+# ----------------------------------------------------------------
+# RECORD_LENGTH = number of samples in the acquisition window
+# POST_TRIGGER: post trigger size in percent of the whole acquisition window
+#PULSE_POLARITY: input signal polarity.
+# EXTERNAL_TRIGGER: external trigger input settings. When enabled, the ext. trg. can be either  propagated (ACQUISITION_AND_TRGOUT) or not (ACQUISITION_ONLY) through the TRGOUT.
+# FPIO_LEVEL: type of the front panel I/O LEMO connectors 
+# OUTPUT_FILE_FORMAT: output file can be either ASCII (column of decimal numbers) or binary (2 bytes per sample, except for Mod 721 and Mod 731 that is 1 byte per sample).
+# OUTPUT_FILE_HEADER: if enabled, the header is included in the output file data.
+# TEST_PATTERN: if enabled, data from ADC are replaced by test pattern (triangular wave)
+
+# ----------------------------------------------------------------
+# Individual Settings 
+# ----------------------------------------------------------------
+# ENABLE_INPUT: enable/disable one channel.
+#BASELINE_LEVEL: baseline position in percent of the Full Scale. 
+# POSITIVE PULSE POLARITY (Full Scale = from 0 to + Vpp)
+ 0: analog input dynamic range = from 0 to +Vpp 
+ 50: analog input dynamic range = from +Vpp/2 to +Vpp 
+100: analog input dynamic range = null (usually not used)*
+# NEGATIVE PULSE POLARITY (Full Scale = from -Vpp to 0) 
+ 0: analog input dynamic range = from -Vpp to 0 
+ 50: analog input dynamic range = from -Vpp/2 to 0 
+ 100: analog input dynamic range = null (usually not used)*
+ options: 0 to 100.
+# TRIGGER_THRESHOLD: threshold for the channel auto trigger (ADC counts)
+ options 0 to 2^N-1 (N=Number of bit of the ADC). The threshold is relative to the baseline:
+ POSITIVE PULSE POLARITY: threshold = baseline + TRIGGER_THRESHOLD
+ NEGATIVE PULSE POLARITY: threshold = baseline - TRIGGER_THRESHOLD
+# CHANNEL_TRIGGER: channel auto trigger settings. When enabled, the ch. auto trg. can be either propagated (ACQUISITION_AND_TRGOUT) or not (ACQUISITION_ONLY) through the TRGOUT.</string>
+   </property>
+   <property name="backgroundVisible">
+    <bool>false</bool>
+   </property>
+   <property name="centerOnScroll">
+    <bool>false</bool>
+   </property>
+   <property name="placeholderText">
+    <string notr="true"/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
